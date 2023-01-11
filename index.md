@@ -14,13 +14,18 @@ I hope you enjoy some of the content in this blog!
 
 {% include button.html text="Github" icon="github" link="https://github.com/iliasstahiri" color="#0366d6" %} {% include button.html text="Tweet it" icon="twitter" link="https://twitter.com/ulysset" color="#0d94e7" %} {% include button.html text="Reach out"  icon="mail" link="iliass.tahiri@gmail.com" %}
 
-## Areas of research
+My research areas are quite broad. My primary research interests are:
 
-- Modeling of materials
-- Poromechanics
-- Cement and concrete research
-- **Asphalt and bitumen ** research
-- **Numerical** simulations
+Modeling of materials: using mathematical and computational models to simulate the behavior of different materials, such as concrete and asphalt, under various conditions.
+
+Poromechanics: This is an interdisciplinary field that combines mechanics and porous media theory to understand the behavior of porous materials, such as concrete, wood, asphalt...
+
+Cement and concrete research: study the properties and behavior of cement and concrete, such as their strength, durability, and resistance to various environmental factors, mainly under at low temperature. Here is link to my [Ph.D.](https://www.theses.fr/2021ENPC0038)
+
+Asphalt and bitumen research: study the properties and behavior of asphalt and bitumen, such as their viscoelastic behavior, rheology, and aging process.
+
+Numerical simulations: conduct computer simulations to analyze the behavior of materials and systems.
+
 
 ## Bookshelf
 
