@@ -16,27 +16,27 @@ I hope you enjoy some of the content in this blog!
 
 My research areas are quite broad. My primary research interests are:
 
-Modeling of materials: using mathematical and computational models to simulate the behavior of different materials, such as concrete and asphalt, under various conditions.
+**Modeling of materials**: using mathematical and computational models to simulate the behavior of different materials, such as concrete and asphalt, under various conditions.
 
-Poromechanics: This is an interdisciplinary field that combines mechanics and porous media theory to understand the behavior of porous materials, such as concrete, wood, asphalt...
+**Poromechanics**: This is an interdisciplinary field that combines mechanics and porous media theory to understand the behavior of porous materials, such as concrete, wood, asphalt...
 
-Cement and concrete research: study the properties and behavior of cement and concrete, such as their strength, durability, and resistance to various environmental factors, mainly under at low temperature. Here is link to my [Ph.D.](https://www.theses.fr/2021ENPC0038)
+**Cement and concrete research**: study the properties and behavior of cement and concrete, such as their strength, durability, and resistance to various environmental factors, mainly under at low temperature. Here is link to my [Ph.D.](https://www.theses.fr/2021ENPC0038)
 
-Asphalt and bitumen research: study the properties and behavior of asphalt and bitumen, such as their viscoelastic behavior, rheology, and aging process.
+**Asphalt and bitumen research**: study the properties and behavior of asphalt and bitumen, such as their viscoelastic behavior, rheology, and aging process.
 
-Numerical simulations: conduct computer simulations to analyze the behavior of materials and systems.
+**Numerical simulations**: conduct computer simulations to analyze the behavior of materials and systems.
 
 
 ## Bookshelf
 
-Here are the books I'm reading now:
+Books I'm curenttly reading:
 
 - [A la recherche du temps perdu -  Marcel Proust](https://goodread.com/)
 - [Noise - Daniel Kahneman](https://goodread.com/)
 
 Here are the books I read recently (with a potential review):
 
-- [The Danish Way of Parenting](https://case2111.github.io/)(https://goodread.com/)
+- [The Danish Way of Parenting](https://goodread.com/)
 - [Antifragility - Nassim Nicholas Taleb](https://goodread.com/)
 - [Black swan - Nassim Nicholas Taleb](https://goodread.com/)
 - [Skin in the game - Nassim Nicholas Taleb](https://goodread.com/)
