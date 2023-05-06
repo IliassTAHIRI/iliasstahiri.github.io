@@ -33,6 +33,8 @@ latest_data = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVI
 ## Total confirmed cases
 ![Recoveries in Morocco from COVID-19](/img/Cases.jpg)
 
+{% include figure.html image="/assets/img/Fatalities_recov.jpg" caption="Image with caption" width="300" height="800" %}
+
 ## Deaths
 
 ![Deaths in Morocco from COVID-19](/img/Fatalities.jpg)
