@@ -3,7 +3,7 @@ title: Hi I'm Iliass Tahiri!
 feature_text: |
   ## Blog
   A blog to share my projects
-#feature_image: "https://picsum.photos/1300/400?image=989"
+feature_image: "/assets/img/Duct.jpeg"
 excerpt: "Hello"
 ---
 
