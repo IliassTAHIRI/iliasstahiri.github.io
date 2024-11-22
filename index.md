@@ -2,7 +2,7 @@
 title: Hi I'm Iliass Tahiri!
 feature_text: |
   ## Blog
-  A blog to share my projects
+
 feature_image: "/assets/img/Duct.jpeg"
 excerpt: "Hello"
 ---

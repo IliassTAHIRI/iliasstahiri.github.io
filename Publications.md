@@ -19,5 +19,6 @@ feature_image: "https://picsum.photos/2560/600?image=873"
 
 # Conferences & Talks
 
+* Presentation at the [TRB](https://sites.northwestern.edu/biotbazant2021/) in Washington
 * Presentation at the [The Biot-Bažant Conference](https://sites.northwestern.edu/biotbazant2021/) in Northwestern University
 * Talk at Navier Laboratory - [Abstract](https://navier-lab.fr/agenda/seminaire-navier-ilias-tahiri-doctorant-multi-echelle/)
