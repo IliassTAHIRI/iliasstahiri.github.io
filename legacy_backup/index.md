@@ -10,6 +10,10 @@ excerpt: "Hello"
 
 Hello, my name is Iliass Tahiri. I am a research engineer working in the field of material science. My most recent are listed in Blog section. If you are interested in construction of this blog please read [Implementation of the blog]() post.
 
+## Blog Summary
+
+This blog shares my work and reflections as a research engineer in materials science, with a focus on combining theory, experiments, and computational methods. I write about modeling materials, poromechanics, and the behavior of cement, concrete, asphalt, and bitumen under real-world conditions. You will also find posts on numerical simulations and how they help explain complex material behavior. I hope these notes are useful for researchers, engineers, and anyone curious about how materials perform.
+
 I hope you enjoy some of the content in this blog!
 
 {% include button.html text="Github" icon="github" link="https://github.com/iliasstahiri" color="#0366d6" %} {% include button.html text="Tweet it" icon="twitter" link="https://twitter.com/ulysset" color="#0d94e7" %} {% include button.html text="Reach out"  icon="mail" link="iliass.tahiri@gmail.com" %}

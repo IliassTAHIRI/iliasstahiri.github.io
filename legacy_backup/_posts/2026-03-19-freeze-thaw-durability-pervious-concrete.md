@@ -1,0 +1,59 @@
+---
+title: "Freeze-Thaw Durability of Pervious Concrete: Lessons from My PhD"
+categories:
+- Publications
+---
+
+Pervious concrete is designed to let water pass through, which is great for drainage but challenging for durability in cold climates. During my PhD, I focused on how frost attacks, especially in the presence of salt, initiate and propagate damage in pervious concrete. This article summarizes the motivation, modeling approach, and the key lessons that can help us design more durable mixes.
+
+## Motivation
+
+Freeze-thaw damage in pervious concrete does not behave like conventional concrete. The open pore network changes how water and ice interact with the skeleton, and deicing salts add another layer of complexity. The goal of this study was to identify the most critical stress locations and the governing parameters that accelerate damage during freeze-thaw cycling.
+
+## Modeling Approach
+
+To isolate the mechanisms, I used numerical simulations with a poroelastic model and simplified representative geometries at the aggregate scale. I studied three configurations:
+
+- One aggregate coated with cement paste.
+- One aggregate coated with a cracked layer of cement paste.
+- Two aggregates coated and bonded with cement paste.
+
+These geometries are minimal yet powerful. They allow us to see how stress concentrates locally and how cracks can develop at the interfaces under different thermal and hydraulic conditions.
+
+## Key Findings
+
+The simulations consistently show that damage is most likely to initiate at the contact between aggregates. Two observations are particularly important:
+
+- Shear stress peaks near the paste-aggregate interface, making this region highly vulnerable during freezing.
+- When aggregates are bonded by a thin paste bridge, the contact zone becomes a stress hotspot during freeze-thaw cycles.
+
+In practice, this means that the micro-architecture of the paste at aggregate contacts strongly controls durability.
+
+## Parametric Study Highlights
+
+I ran a broad parametric study covering boundary conditions, initial conditions, and material properties. The main takeaways are:
+
+- Boundary conditions (especially moisture and temperature histories) significantly influence stress levels.
+- Initial saturation and salt concentration can shift the location and intensity of damage.
+- Material parameters related to stiffness and permeability govern how stress builds during freezing.
+
+These results help prioritize what to measure and control in both lab tests and field applications.
+
+## Design Guidelines from the Study
+
+Based on the simulations, several practical directions emerge:
+
+- Strengthen the paste-aggregate interface to reduce shear stress localization.
+- Control paste thickness and continuity at aggregate contacts to limit stress peaks.
+- Optimize pore structure and saturation states to reduce freeze-thaw driving forces.
+
+## Why This Matters
+
+Understanding damage at the aggregate scale helps connect micro-level behavior to macro-level durability. The insights from this work can guide mix design, curing strategies, and exposure management for pervious concrete in cold regions.
+
+The published version is available at [Cement & Concrete Research](https://www.sciencedirect.com/science/article/abs/pii/S0008884622002630). If you would like figures, additional details, or the preprint, I can add them in a follow-up update.
+
+## How to Cite
+
+Tahiri, I., et al. (2022). *Numerical investigation of salt-frost damage of pervious concrete at the scale of a few aggregates*. Cement & Concrete Research.  
+Link: https://www.sciencedirect.com/science/article/abs/pii/S0008884622002630
