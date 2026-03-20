@@ -28,9 +28,15 @@ const Navbar = () => {
                 <Link to="/" className="nav-logo">Iliass Tahiri</Link>
                 <div className="nav-links">
                     <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/about" className="nav-link">About</Link>
+                    <Link to="/now" className="nav-link">Now</Link>
                     <Link to="/research" className="nav-link">Research</Link>
                     <Link to="/publications" className="nav-link">Publications</Link>
                     <Link to="/blog" className="nav-link">Blog</Link>
+                    <Link to="/til" className="nav-link">TIL</Link>
+                    <Link to="/case-studies" className="nav-link">Case Studies</Link>
+                    <Link to="/tutorials" className="nav-link">Tutorials</Link>
+                    <Link to="/non-tech" className="nav-link">Non-Tech</Link>
                 </div>
                 <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
                     {theme === 'dark' ? 'Light mode' : 'Dark mode'}

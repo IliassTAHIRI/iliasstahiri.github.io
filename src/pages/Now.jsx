@@ -3,26 +3,35 @@ import React from 'react'
 const Now = () => {
     return (
         <div className="container" style={{ paddingBottom: '80px' }}>
-            <section className="section" style={{ textAlign: 'center' }}>
-                <h1 className="section-title">Now</h1>
-                <p className="section-subtitle">What I am focused on right now.</p>
+            <section className="page-hero">
+                <span className="kicker">Now</span>
+                <h1 className="section-title">What I am focused on right now.</h1>
+                <p className="lead">A living snapshot of priorities, projects, and skills.</p>
             </section>
 
-            <section className="section" style={{ maxWidth: '860px', margin: '0 auto' }}>
-                <div className="hero-card" style={{ textAlign: 'left' }}>
+            <section className="section split">
+                <div className="section-band stack">
                     <h2 style={{ marginBottom: '12px' }}>Current Focus</h2>
-                    <p style={{ color: 'var(--text-secondary)' }}>
+                    <p>
                         Reservoir geomechanics for depletion and CO2 injection, with an emphasis on wellbore
                         stability, compaction-driven subsidence, and stress-path sensitivity.
                     </p>
-                    <p style={{ marginTop: '12px', color: 'var(--text-secondary)' }}>
-                        Last updated: March 20, 2026.
-                    </p>
+                    <span className="pill">Last updated: March 20, 2026</span>
+                </div>
+                <div className="stack">
+                    <div className="note-card">
+                        <span className="pill">Skills in Motion</span>
+                        <p>Stress path interpretation, poromechanics calibration, and uncertainty framing.</p>
+                    </div>
+                    <div className="note-card">
+                        <span className="pill">Collaborations</span>
+                        <p>Working closely with reservoir engineers, drilling teams, and data science partners.</p>
+                    </div>
                 </div>
             </section>
 
-            <section className="section" style={{ maxWidth: '860px', margin: '0 auto' }}>
-                <h2 className="section-title" style={{ fontSize: '1.6rem' }}>Active Projects</h2>
+            <section className="section" style={{ maxWidth: '960px', margin: '0 auto' }}>
+                <h2 className="section-title" style={{ fontSize: '1.8rem' }}>Active Projects</h2>
                 <div className="post-grid" style={{ marginTop: '24px' }}>
                     <article className="post-card">
                         <h3>CO2 Injection Geomechanics Playbook</h3>
@@ -39,9 +48,9 @@ const Now = () => {
                 </div>
             </section>
 
-            <section className="section" style={{ maxWidth: '860px', margin: '0 auto' }}>
-                <h2 className="section-title" style={{ fontSize: '1.6rem' }}>Learning & Reading</h2>
-                <div className="interest-grid" style={{ marginTop: '24px' }}>
+            <section className="section" style={{ maxWidth: '960px', margin: '0 auto' }}>
+                <h2 className="section-title" style={{ fontSize: '1.8rem' }}>Learning & Reading</h2>
+                <div className="card-grid" style={{ marginTop: '24px' }}>
                     <div className="interest-card">
                         <h3>Geomechanics Literature</h3>
                         <p>Deep-diving on compaction banding, poroplasticity, and caprock integrity studies.</p>
