@@ -21,9 +21,9 @@ const Home = () => {
                     <h1 className="hero-title">{bioData.name}</h1>
                     <p className="hero-subtitle">{bioData.title}</p>
                     <p style={{ fontSize: '1.05rem' }}>
-                        I am a research engineer in material science, working at the intersection of
-                        poromechanics, multi-physics modeling, and sustainable construction. This digital
-                        garden captures research notes, project updates, and long-form reflections.
+                        I am a senior geomechanics engineer focused on reservoir behavior under depletion
+                        and CO2 injection. This digital garden captures research notes, project updates,
+                        and long-form reflections across geomechanics, modeling, and decision-making.
                     </p>
 
                     <div className="hero-actions" style={{ marginTop: '28px' }}>
@@ -49,8 +49,8 @@ const Home = () => {
                 <div className="hero-card">
                     <h3 style={{ marginBottom: '10px' }}>Now</h3>
                     <p style={{ color: 'var(--text-secondary)' }}>
-                        Current focus: modeling porous materials under coupled thermal and hydraulic loading.
-                        I translate experiments into numerical models that guide resilient infrastructure design.
+                        Current focus: reservoir geomechanics, wellbore stability, and compaction-driven subsidence.
+                        I translate field data and lab insights into robust poromechanical and plasticity models.
                     </p>
                     <div className="stat-grid">
                         <div className="stat-item">

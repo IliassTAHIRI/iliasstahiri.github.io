@@ -1,7 +1,7 @@
 export const bioData = {
     name: "Iliass Tahiri",
-    title: "Research Engineer & Material Scientist",
-    description: "Hello, my name is Iliass Tahiri. I am a research engineer specializing in material science with a focus on cement, asphalt, and durability. My work combines experimental research with predictive modeling to understand and improve material performance.",
+    title: "Senior Geomechanics Engineer",
+    description: "Hello, my name is Iliass Tahiri. I am a senior geomechanics engineer focused on reservoir geomechanics, depletion and CO2 injection, wellbore stability, and compaction-driven subsidence. I work with poromechanics, plasticity (Modified Cam Clay, Delft Egg), and damage models, and I previously worked as an asphalt/bitumen research engineer.",
     socials: [
         { name: "Github", url: "https://github.com/iliasstahiri", icon: "github" },
         { name: "Twitter", url: "https://twitter.com/ulysset", icon: "twitter" },
@@ -10,25 +10,24 @@ export const bioData = {
     ],
     interests: [
         {
-            title: "Materials Science",
-            description: "Broad research into the fundamental properties and behaviors of construction materials."
+            title: "Reservoir Geomechanics",
+            description: "Depletion and CO2 injection behavior, stress-path evolution, and geomechanical risk assessment."
         },
         {
-            title: "Cement and Concrete Research",
-            description: "Study properties and behavior of cement and concrete: strength, durability, resistance to various environmental factors. (Ph.D.)"
+            title: "Wellbore Stability",
+            description: "Coupled pressure-stress analysis, mud window design, and geomechanics-informed drilling decisions."
         },
         {
-            title: "Poromechanics",
-            description: "Interdisciplinary field combining mechanics and porous media theory to understand behavior of porous materials like concrete, wood, asphalt.",
-            image: "/assets/img/Ductal.jpeg"
+            title: "Poromechanics & Plasticity",
+            description: "Constitutive modeling with Modified Cam Clay, Delft Egg, and damage formulations for porous rocks."
         },
         {
-            title: "Asphalt Research",
-            description: "Investigation into asphalt durability, viscoelastic behavior, and innovative binders to reduce urban heat island effects."
+            title: "Compaction & Subsidence",
+            description: "Reservoir compaction, surface subsidence prediction, and mitigation strategies."
         },
         {
-            title: "Durability & Modeling",
-            description: "Integrating experiments, multi-scale physical modeling, and numerical simulations to predict the long-term durability of pavements and materials."
+            title: "Multiphysics Modeling",
+            description: "Workflow integration across GEOLOG, PETREL, MFRONT, GEOSX, and in-house numerical pipelines."
         }
     ],
     bookshelf: {
