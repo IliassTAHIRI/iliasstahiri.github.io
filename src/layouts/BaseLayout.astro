@@ -60,7 +60,7 @@ const jsonLd = structuredData ? structuredData : defaultStructuredData
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
     <title>{title}</title>
-    <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
   </head>
   <body>
     <div class="app-container">
