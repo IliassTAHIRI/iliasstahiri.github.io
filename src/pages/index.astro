@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { bioData } from '../data/bio'
+import { postsData } from '../data/posts'
+
+const featuredPosts = [...postsData]
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .slice(0, 2)
+---
+<BaseLayout title="Iliass Tahiri | Geomechanics">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="hero section">
+      <div>
+        <h1 class="hero-title">{bioData.name}</h1>
+        <p class="hero-subtitle">{bioData.title}</p>
+        <p style="font-size: 1.05rem;">
+          I am a senior geomechanics engineer focused on reservoir behavior under depletion
+          and CO2 injection. This digital garden captures research notes, project updates,
+          and long-form reflections across geomechanics, modeling, and decision-making.
+        </p>
+
+        <div class="hero-actions" style="margin-top: 28px;">
+          <a href="/blog" class="button">Read the Journal</a>
+          <a href="/research" class="button secondary">Explore Research</a>
+        </div>
+
+        <div class="social-row">
+          {bioData.socials.map((social) => (
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mono-link"
+            >
+              {social.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3 style="margin-bottom: 10px;">Now</h3>
+        <p style="color: var(--text-secondary);">
+          Current focus: reservoir geomechanics, wellbore stability, and compaction-driven subsidence.
+          I translate field data and lab insights into robust poromechanical and plasticity models.
+        </p>
+        <div class="stat-grid">
+          <div class="stat-item">
+            <span class="stat-label">Focus Areas</span>
+            <span class="stat-value">{bioData.interests.length}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Recent Posts</span>
+            <span class="stat-value">{postsData.length}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Approach</span>
+            <span class="stat-value">Model + Data</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-width" style="text-align: center; margin-bottom: 36px;">
+        <h2 class="section-title">Research Interests</h2>
+        <p class="section-subtitle">What I investigate across materials and mechanics.</p>
+      </div>
+      <div class="interest-grid">
+        {bioData.interests.map((interest) => (
+          <div class="interest-card">
+            <h3>{interest.title}</h3>
+            <p>{interest.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+        <div>
+          <h2 class="section-title">Latest Writing</h2>
+          <p class="section-subtitle">Selected entries from the journal.</p>
+        </div>
+        <a href="/blog" class="mono-link">View all posts</a>
+      </div>
+
+      <div class="post-grid" style="margin-top: 28px;">
+        {featuredPosts.map((post) => (
+          <article class="post-card">
+            <div class="post-meta">
+              <span>{post.date}</span>
+              {(post.tags || []).map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            <h3 style="margin-bottom: 0;">{post.title}</h3>
+            <p>{post.excerpt}</p>
+            <a href={`/blog/${post.slug}`} class="mono-link">Continue reading</a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

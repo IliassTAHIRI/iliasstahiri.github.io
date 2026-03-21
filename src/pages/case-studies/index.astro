@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { caseStudiesData } from '../../data/caseStudies'
+---
+<BaseLayout title="Case Studies | Iliass Tahiri" description="Project decisions, tradeoffs, and outcomes">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="page-hero">
+      <span class="kicker">Case Studies</span>
+      <h1 class="section-title">Project decisions, tradeoffs, and lessons learned.</h1>
+      <p class="lead">
+        These are not just project summaries. They focus on the reasoning behind the tools, models, and
+        workflows I chose.
+      </p>
+    </section>
+
+    <div class="post-grid">
+      {caseStudiesData.map((study) => (
+        <article class="post-card">
+          <h3>{study.title}</h3>
+          <p><span class="pill">Focus</span> {study.focus}</p>
+          <p><span class="pill">Decision</span> {study.decision}</p>
+          <p><span class="pill">Hardest Challenge</span> {study.challenge}</p>
+          <p><span class="pill">Outcome</span> {study.outcome}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

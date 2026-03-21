@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Blog from '../../components/Blog.jsx'
+import { postsData } from '../../data/posts'
+---
+<BaseLayout title="Blog | Iliass Tahiri" description="Journal entries and research notes">
+  <Blog posts={postsData} client:load />
+</BaseLayout>

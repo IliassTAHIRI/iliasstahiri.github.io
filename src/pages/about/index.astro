@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { bioData } from '../../data/bio'
+---
+<BaseLayout title="About | Iliass Tahiri" description="About Iliass Tahiri - Senior Geomechanics Engineer">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="page-hero">
+      <span class="kicker">About</span>
+      <h1 class="section-title">Geomechanics, modeling, and the decisions behind the simulations.</h1>
+      <p class="lead">
+        I build geomechanics workflows that translate field observations into reliable, decision-ready models.
+      </p>
+    </section>
+
+    <section class="section split">
+      <div class="stack">
+        <h2 class="section-title" style="font-size: 1.8rem;">Short Bio</h2>
+        <p>{bioData.description}</p>
+        <div class="note-card">
+          <span class="pill">Current Focus</span>
+          <p>
+            Reservoir depletion, CO2 injection, wellbore stability, and compaction-driven subsidence.
+            I combine field data interpretation with constitutive modeling and risk assessment.
+          </p>
+        </div>
+      </div>
+      <div class="stack">
+        <h2 class="section-title" style="font-size: 1.8rem;">Tools & Platforms</h2>
+        <div class="card-grid">
+          <div class="interest-card">
+            <h3>Geoscience Tooling</h3>
+            <p>GEOLOG, PETREL, and domain workflows for subsurface characterization.</p>
+          </div>
+          <div class="interest-card">
+            <h3>Constitutive Modeling</h3>
+            <p>MFRONT and custom material models for plasticity and damage.</p>
+          </div>
+          <div class="interest-card">
+            <h3>Simulation Platforms</h3>
+            <p>GEOSX and in-house toolchains for coupled flow and geomechanics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-band">
+      <h2 class="section-title" style="font-size: 1.8rem;">Modeling Approach</h2>
+      <div class="post-grid" style="margin-top: 24px;">
+        <article class="post-card">
+          <h3>Poromechanics</h3>
+          <p>Coupled pressure-stress analysis to capture depletion and injection pathways.</p>
+        </article>
+        <article class="post-card">
+          <h3>Plasticity</h3>
+          <p>Modified Cam Clay, Delft Egg, and stress-path-dependent yielding.</p>
+        </article>
+        <article class="post-card">
+          <h3>Damage</h3>
+          <p>Progressive stiffness degradation to represent microcracking and compaction bands.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" style="max-width: 860px; margin: 0 auto;">
+      <h2 class="section-title" style="font-size: 1.8rem;">Background</h2>
+      <p>
+        Before moving into reservoir geomechanics, I worked as an asphalt/bitumen research engineer
+        focused on durability and constitutive modeling. That experience still shapes how I validate
+        models against data and keep an experimental mindset in simulation-heavy work.
+      </p>
+    </section>
+
+    <section class="section" style="text-align: center;">
+      <h2 class="section-title">Writing Tracks</h2>
+      <p class="section-subtitle">Focused series on decisions, tools, and the human side of the work.</p>
+      <div class="card-grid" style="margin-top: 24px;">
+        <a href="/til" class="interest-card">
+          <h3>Today I Learned</h3>
+          <p>Short notes on bugs fixed, model tweaks, and lessons from the week.</p>
+        </a>
+        <a href="/case-studies" class="interest-card">
+          <h3>Case Studies</h3>
+          <p>Decisions made, tradeoffs considered, and outcomes from real projects.</p>
+        </a>
+        <a href="/tutorials" class="interest-card">
+          <h3>Tutorials</h3>
+          <p>Guides to niche workflows that deserve better documentation.</p>
+        </a>
+        <a href="/non-tech" class="interest-card">
+          <h3>Non-Tech Perspective</h3>
+          <p>Notes on productivity, remote work, and the journey into geomechanics.</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

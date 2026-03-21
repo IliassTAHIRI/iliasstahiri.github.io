@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { publicationsData } from '../../data/publications'
+---
+<BaseLayout title="Publications | Iliass Tahiri" description="Academic papers and contributions">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="section" style="text-align: center;">
+      <h1 class="section-title">Publications</h1>
+      <p class="section-subtitle">Academic papers and contributions.</p>
+    </section>
+
+    <div class="post-grid">
+      {publicationsData.map((pub) => (
+        <article class="post-card">
+          <div class="post-meta">
+            <span>{pub.journal}</span>
+            <span>{pub.date.split('-')[0]}</span>
+          </div>
+          <h2 style="font-size: 1.3rem; margin-bottom: 8px;">
+            <a href={pub.url} target="_blank" rel="noopener noreferrer">
+              {pub.title} ↗
+            </a>
+          </h2>
+          <p>{pub.excerpt}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

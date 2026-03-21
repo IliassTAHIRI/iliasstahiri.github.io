@@ -1,0 +1,25 @@
+---
+import Navbar from '../components/Navbar.jsx'
+import Footer from '../components/Footer.jsx'
+import '../styles/global.css'
+
+const { title = 'Iliass Tahiri | Geomechanics', description = 'Iliass Tahiri - Senior Geomechanics Engineer' } = Astro.props
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <Navbar />
+      <main id="content">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PostView from '../../components/PostView.jsx'
+import { postsData } from '../../data/posts'
+
+export function getStaticPaths() {
+  return postsData.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }))
+}
+
+const { post } = Astro.props
+---
+<BaseLayout title={`${post?.title ?? 'Post'} | Iliass Tahiri`} description={post?.excerpt || 'Journal entry'}>
+  <PostView post={post} client:load />
+</BaseLayout>

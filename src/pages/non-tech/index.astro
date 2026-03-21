@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { perspectivesData } from '../../data/perspectives'
+---
+<BaseLayout title="Non-Tech | Iliass Tahiri" description="Productivity, collaboration, and the journey behind the work">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="page-hero">
+      <span class="kicker">Non-Tech</span>
+      <h1 class="section-title">Productivity, collaboration, and the journey behind the work.</h1>
+      <p class="lead">Short reflections that keep the human side of the work visible.</p>
+    </section>
+
+    <div class="post-grid">
+      {perspectivesData.map((entry) => (
+        <article class="post-card">
+          <div class="post-meta">
+            <span>{entry.date}</span>
+            <span class="tag">{entry.topic}</span>
+          </div>
+          <h3 style="margin-bottom: 0;">{entry.title}</h3>
+          <p>{entry.excerpt}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

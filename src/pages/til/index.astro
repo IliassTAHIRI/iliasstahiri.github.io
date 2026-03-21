@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { tilsData } from '../../data/tils'
+---
+<BaseLayout title="TIL | Iliass Tahiri" description="Short, frequent notes and lessons learned">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="page-hero">
+      <span class="kicker">TIL</span>
+      <h1 class="section-title">Today I Learned</h1>
+      <p class="lead">Short, frequent notes from the workbench.</p>
+    </section>
+
+    <div class="post-grid">
+      {tilsData.map((til) => (
+        <article class="til-card">
+          <div class="post-meta">
+            <span>{til.date}</span>
+            <span class="tag">{til.tag}</span>
+          </div>
+          <h3 style="margin-bottom: 0;">{til.title}</h3>
+          <p>{til.summary}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

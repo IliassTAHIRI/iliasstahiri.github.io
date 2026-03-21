@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { tutorialsData } from '../../data/tutorials'
+---
+<BaseLayout title="Tutorials | Iliass Tahiri" description="Niche, practical guides for real workflows">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="page-hero">
+      <span class="kicker">Tutorials</span>
+      <h1 class="section-title">Niche, practical guides for real workflows.</h1>
+      <p class="lead">Focused how-to guides for problems that are under-documented.</p>
+    </section>
+
+    <div class="post-grid">
+      {tutorialsData.map((tutorial) => (
+        <article class="post-card">
+          <h3>{tutorial.title}</h3>
+          <p><span class="pill">Niche</span> {tutorial.niche}</p>
+          <p>{tutorial.summary}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

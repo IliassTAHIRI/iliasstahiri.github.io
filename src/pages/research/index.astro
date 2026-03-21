@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { bioData } from '../../data/bio'
+---
+<BaseLayout title="Research | Iliass Tahiri" description="Research topics and focus areas">
+  <div class="container" style="padding-bottom: 80px;">
+    <section class="section" style="text-align: center;">
+      <h1 class="section-title">Research Topics</h1>
+      <p class="section-subtitle">Areas of focus and investigation.</p>
+    </section>
+
+    <div class="interest-grid">
+      {bioData.interests.map((interest) => (
+        <div class="interest-card">
+          <h2 style="font-size: 1.3rem; margin-bottom: 8px;">{interest.title}</h2>
+          <p>{interest.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
