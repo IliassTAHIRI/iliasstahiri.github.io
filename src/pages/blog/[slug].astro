@@ -11,7 +11,31 @@ export function getStaticPaths() {
 }
 
 const { post } = Astro.props
+const site = Astro.site?.href || 'https://iliasstahiri.github.io'
+const canonical = new URL(`/blog/${post?.slug ?? ''}`, site).href
+const structuredData = post
+  ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.date,
+        author: {
+          '@type': 'Person',
+          name: 'Iliass Tahiri'
+        },
+        mainEntityOfPage: canonical
+      }
+    ]
+  : null
 ---
-<BaseLayout title={`${post?.title ?? 'Post'} | Iliass Tahiri`} description={post?.excerpt || 'Journal entry'}>
+<BaseLayout
+  title={`${post?.title ?? 'Post'} | Iliass Tahiri`}
+  description={post?.excerpt || 'Journal entry'}
+  ogType="article"
+  canonical={canonical}
+  structuredData={structuredData}
+>
   <PostView post={post} client:load />
 </BaseLayout>
