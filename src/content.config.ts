@@ -40,6 +40,7 @@ const tutorialsCollection = defineCollection({
     title: z.string(),
     niche: z.string(),
     summary: z.string(),
+    date: z.string().optional(),
   }),
 })
 
