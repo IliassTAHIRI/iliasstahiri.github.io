@@ -1,41 +1,58 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import PostView from '../../components/PostView.jsx'
-import { postsData } from '../../data/posts'
+import { getCollection } from 'astro:content'
 
-export function getStaticPaths() {
-  return postsData.map((post) => ({
-    params: { slug: post.slug },
-    props: { post }
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft)
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
   }))
 }
 
-const { post } = Astro.props
-const site = Astro.site?.href || 'https://iliasstahiri.github.io'
-const canonical = new URL(`/blog/${post?.slug ?? ''}`, site).href
-const structuredData = post
-  ? [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: post.title,
-        description: post.excerpt,
-        datePublished: post.date,
-        author: {
-          '@type': 'Person',
-          name: 'Iliass Tahiri'
-        },
-        mainEntityOfPage: canonical
-      }
-    ]
+const { entry } = Astro.props
+const post = {
+  slug: entry.id,
+  title: entry.data.title,
+  date: entry.data.date,
+  tags: entry.data.tags,
+  excerpt: entry.data.excerpt,
+  content: entry.body,
+  featured: entry.data.featured,
+}
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft)
+const relatedPosts = allPosts
+  .filter((p) => p.id !== entry.id && p.data.tags.some((t) => entry.data.tags.includes(t)))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3)
+  .map((p) => ({ slug: p.id, title: p.data.title, excerpt: p.data.excerpt, date: p.data.date }))
+
+const sortedPosts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+const currentIndex = sortedPosts.findIndex((p) => p.id === entry.id)
+const nextPost = currentIndex < sortedPosts.length - 1
+  ? { slug: sortedPosts[currentIndex + 1].id, title: sortedPosts[currentIndex + 1].data.title }
   : null
+
+const site = Astro.site?.href || 'https://iliasstahiri.github.io'
+const canonical = new URL(`/blog/${entry.id}`, site).href
+const structuredData = [{
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.excerpt,
+  datePublished: post.date,
+  author: { '@type': 'Person', name: 'Iliass Tahiri' },
+  mainEntityOfPage: canonical,
+}]
 ---
 <BaseLayout
-  title={`${post?.title ?? 'Post'} | Iliass Tahiri`}
-  description={post?.excerpt || 'Journal entry'}
+  title={`${post.title} | Iliass Tahiri`}
+  description={post.excerpt}
   ogType="article"
   canonical={canonical}
   structuredData={structuredData}
 >
-  <PostView post={post} client:load />
+  <PostView post={post} relatedPosts={relatedPosts} nextPost={nextPost} client:load />
 </BaseLayout>

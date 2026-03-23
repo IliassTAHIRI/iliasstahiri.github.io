@@ -1,6 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { tutorialsData } from '../../data/tutorials'
+import { getCollection } from 'astro:content'
+
+const allTutorials = await getCollection('tutorials')
+const tutorialsData = allTutorials
+  .map((tutorial) => ({
+    title: tutorial.data.title,
+    niche: tutorial.data.niche,
+    summary: tutorial.data.summary,
+  }))
 ---
 <BaseLayout title="Tutorials | Iliass Tahiri" description="Niche, practical guides for real workflows">
   <div class="container" style="padding-bottom: 80px;">

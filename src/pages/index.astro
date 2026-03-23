@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { bioData } from '../data/bio'
-import { postsData } from '../data/posts'
+import { getCollection } from 'astro:content'
 
-const featuredPosts = [...postsData]
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .slice(0, 2)
+const allPosts = await getCollection('blog', ({ data }) => !data.draft)
+const featuredPosts = allPosts
+  .filter((p) => p.data.featured)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3)
+  .map((p) => ({ slug: p.id, title: p.data.title, date: p.data.date, tags: p.data.tags, excerpt: p.data.excerpt }))
 ---
 <BaseLayout title="Iliass Tahiri | Geomechanics">
   <div class="container" style="padding-bottom: 80px;">
@@ -51,7 +54,7 @@ const featuredPosts = [...postsData]
           </div>
           <div class="stat-item">
             <span class="stat-label">Recent Posts</span>
-            <span class="stat-value">{postsData.length}</span>
+            <span class="stat-value">{allPosts.length}</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Approach</span>

@@ -1,6 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { perspectivesData } from '../../data/perspectives'
+import { getCollection } from 'astro:content'
+
+const allPerspectives = await getCollection('perspectives')
+const perspectivesData = allPerspectives
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .map((entry) => ({
+    title: entry.data.title,
+    date: entry.data.date,
+    topic: entry.data.topic,
+    excerpt: entry.data.excerpt,
+  }))
 ---
 <BaseLayout title="Non-Tech | Iliass Tahiri" description="Productivity, collaboration, and the journey behind the work">
   <div class="container" style="padding-bottom: 80px;">
