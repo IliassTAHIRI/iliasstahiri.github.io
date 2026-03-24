@@ -767,3 +767,71 @@ button.tag {
   .nav-links { display: none; }
   .nav-hamburger { display: block; }
 }
+
+/* Share buttons */
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 48px 0 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--bg-contrast);
+}
+
+.share-label {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.share-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid var(--bg-contrast);
+  color: var(--text-secondary);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.share-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+/* Related posts */
+.related-posts { margin: 32px 0; }
+.related-posts-title { font-size: 1rem; margin-bottom: 16px; color: var(--text-secondary); }
+.related-posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+
+.related-post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: var(--bg-contrast);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.related-post-card:hover { background: var(--surface-color); }
+.related-post-date { font-size: 0.75rem; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace; }
+.related-post-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); }
+.related-post-excerpt { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
+
+/* Next post link */
+.next-post-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 24px;
+  background: var(--bg-contrast);
+  border-radius: 16px;
+  text-decoration: none;
+  margin: 24px 0 48px;
+  transition: background 0.2s;
+}
+
+.next-post-link:hover { background: var(--surface-color); }
+.next-post-label { font-size: 0.75rem; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em; }
+.next-post-title { font-size: 1rem; font-weight: 600; color: var(--primary-color); }

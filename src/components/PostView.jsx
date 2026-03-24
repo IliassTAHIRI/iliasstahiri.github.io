@@ -1,5 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
+import 'highlight.js/styles/github.css'
+import ShareButtons from './ShareButtons'
+import RelatedPosts from './RelatedPosts'
 
 const getReadingTime = (markdown) => {
   const words = markdown
@@ -32,7 +36,7 @@ const extractHeadings = (markdown) => {
   return headings
 }
 
-const PostView = ({ post }) => {
+const PostView = ({ post, relatedPosts = [], nextPost = null }) => {
   const [progress, setProgress] = useState(0)
   const [copied, setCopied] = useState(false)
 
@@ -105,6 +109,7 @@ const PostView = ({ post }) => {
         <article>
           <div className="markdown-content">
             <ReactMarkdown
+              rehypePlugins={[rehypeHighlight]}
               components={{
                 h2: ({ node, ...props }) => {
                   const current = headings[headingIndex++]
@@ -125,6 +130,14 @@ const PostView = ({ post }) => {
             </ReactMarkdown>
           </div>
 
+          <ShareButtons title={post.title} url={typeof window !== 'undefined' ? window.location.href : ''} />
+          <RelatedPosts posts={relatedPosts} />
+          {nextPost && (
+            <a href={`/blog/${nextPost.slug}`} className="next-post-link">
+              <span className="next-post-label">Next post</span>
+              <span className="next-post-title">{nextPost.title} →</span>
+            </a>
+          )}
           <div style={{ marginTop: '80px', textAlign: 'center' }}>
             <a href="/blog" className="mono-link">Back to Journal</a>
           </div>
