@@ -36,7 +36,7 @@ const extractHeadings = (markdown) => {
   return headings
 }
 
-const PostView = ({ post, relatedPosts = [], nextPost = null }) => {
+const PostView = ({ post, relatedPosts = [], nextPost = null, canonical = '' }) => {
   const [progress, setProgress] = useState(0)
   const [copied, setCopied] = useState(false)
 
@@ -130,7 +130,7 @@ const PostView = ({ post, relatedPosts = [], nextPost = null }) => {
             </ReactMarkdown>
           </div>
 
-          <ShareButtons title={post.title} url={typeof window !== 'undefined' ? window.location.href : ''} />
+          <ShareButtons title={post.title} url={canonical} />
           <RelatedPosts posts={relatedPosts} />
           {nextPost && (
             <a href={`/blog/${nextPost.slug}`} className="next-post-link">

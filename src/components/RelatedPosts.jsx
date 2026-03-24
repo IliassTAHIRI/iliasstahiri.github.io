@@ -8,7 +8,9 @@ const RelatedPosts = ({ posts }) => {
       <div className="related-posts-grid">
         {posts.map((post) => (
           <a key={post.slug} href={`/blog/${post.slug}`} className="related-post-card">
-            <span className="related-post-date">{post.date}</span>
+            <span className="related-post-date">
+              {post.date ? new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : ''}
+            </span>
             <span className="related-post-title">{post.title}</span>
             <span className="related-post-excerpt">{post.excerpt}</span>
           </a>
