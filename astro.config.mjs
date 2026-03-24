@@ -7,5 +7,6 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://iliasstahiri.github.io',
+  outDir: './docs',
   integrations: [mdx(), react(), sitemap()],
 });
