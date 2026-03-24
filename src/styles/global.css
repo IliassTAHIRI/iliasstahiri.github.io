@@ -741,6 +741,7 @@ button.tag {
 
 /* Mobile menu */
 .nav-mobile-menu {
+  display: flex;
   flex-direction: column;
   padding: 12px 24px 16px;
   background: var(--surface-color);
