@@ -71,6 +71,7 @@ const jsonLd = structuredData ? structuredData : defaultStructuredData
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
     <title>{title}</title>
+    <link rel="alternate" type="application/rss+xml" title="Iliass Tahiri" href="/rss.xml" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
   </head>
   <body>
