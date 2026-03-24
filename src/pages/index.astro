@@ -17,9 +17,8 @@ const featuredPosts = allPosts
         <h1 class="hero-title">{bioData.name}</h1>
         <p class="hero-subtitle">{bioData.title}</p>
         <p style="font-size: 1.05rem;">
-          I am a senior geomechanics engineer focused on reservoir behavior under depletion
-          and CO2 injection. This digital garden captures research notes, project updates,
-          and long-form reflections across geomechanics, modeling, and decision-making.
+          Practical notes on concrete durability, geomechanics, and AI tools for engineers.
+          I write for people who want to understand the mechanics and apply the findings.
         </p>
 
         <div class="hero-actions" style="margin-top: 28px;">
@@ -79,29 +78,42 @@ const featuredPosts = allPosts
       </div>
     </section>
 
-    <section class="section">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
-        <div>
-          <h2 class="section-title">Latest Writing</h2>
-          <p class="section-subtitle">Selected entries from the journal.</p>
+    {featuredPosts.length > 0 && (
+      <section class="section">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+          <div>
+            <h2 class="section-title">Start Here</h2>
+            <p class="section-subtitle">Best place to begin if you're new.</p>
+          </div>
+          <a href="/blog" class="mono-link">All posts</a>
         </div>
-        <a href="/blog" class="mono-link">View all posts</a>
-      </div>
 
-      <div class="post-grid" style="margin-top: 28px;">
-        {featuredPosts.map((post) => (
-          <article class="post-card">
-            <div class="post-meta">
-              <span>{post.date}</span>
-              {(post.tags || []).map((tag) => (
-                <span class="tag">{tag}</span>
-              ))}
-            </div>
-            <h3 style="margin-bottom: 0;">{post.title}</h3>
-            <p>{post.excerpt}</p>
-            <a href={`/blog/${post.slug}`} class="mono-link">Continue reading</a>
-          </article>
-        ))}
+        <div class="post-grid" style="margin-top: 28px;">
+          {featuredPosts.map((post) => (
+            <article class="post-card">
+              <div class="post-meta">
+                <span>{post.date}</span>
+                {(post.tags || []).map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+              <h3 style="margin-bottom: 0;">{post.title}</h3>
+              <p>{post.excerpt}</p>
+              <a href={`/blog/${post.slug}`} class="mono-link">Continue reading</a>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="section newsletter-cta">
+      <div class="newsletter-cta-inner">
+        <h2>Stay in the loop</h2>
+        <p>New posts on concrete durability, geomechanics, and engineering tools — roughly twice a month. No spam.</p>
+        <a href="https://buttondown.com/iliasstahiri" target="_blank" rel="noopener noreferrer" class="button">
+          Subscribe via email
+        </a>
+        <span style="font-size: 0.85rem; color: var(--text-tertiary);">or <a href="/rss.xml" class="mono-link">RSS</a></span>
       </div>
     </section>
   </div>
