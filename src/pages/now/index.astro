@@ -71,13 +71,13 @@ import { bioData } from '../../data/bio'
 
     {bioData.bookshelf && (
       <section class="section" style="max-width: 960px; margin: 0 auto;">
-        <h2 class="section-title">Reading</h2>
+        <h2 class="section-title">Bookshelf</h2>
         {bioData.bookshelf.current?.length > 0 && (
           <>
             <h3>Currently reading</h3>
             <ul>
               {bioData.bookshelf.current.map((book) => (
-                <li><strong>{book.title}</strong> — {book.author}</li>
+                <li><strong>{book.title}</strong>{book.author ? ` — ${book.author}` : ''}</li>
               ))}
             </ul>
           </>
@@ -87,7 +87,7 @@ import { bioData } from '../../data/bio'
             <h3>Recently finished</h3>
             <ul>
               {bioData.bookshelf.recent.map((book) => (
-                <li><strong>{book.title}</strong> — {book.author}</li>
+                <li><strong>{book.title}</strong>{book.author ? ` — ${book.author}` : ''}</li>
               ))}
             </ul>
           </>
