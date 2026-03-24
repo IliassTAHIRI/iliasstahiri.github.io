@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { bioData } from '../../data/bio'
 ---
 <BaseLayout title="Now | Iliass Tahiri" description="Current focus and priorities">
   <div class="container" style="padding-bottom: 80px;">
@@ -8,6 +9,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
       <h1 class="section-title">What I am focused on right now.</h1>
       <p class="lead">A living snapshot of priorities, projects, and skills.</p>
     </section>
+
+    <p class="mono-link" style="margin-bottom: 32px;">Last updated: March 24, 2026</p>
 
     <section class="section split">
       <div class="section-band stack">
@@ -65,5 +68,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
         </div>
       </div>
     </section>
+
+    {bioData.bookshelf && (
+      <section class="section" style="max-width: 960px; margin: 0 auto;">
+        <h2 class="section-title">Reading</h2>
+        {bioData.bookshelf.current?.length > 0 && (
+          <>
+            <h3>Currently reading</h3>
+            <ul>
+              {bioData.bookshelf.current.map((book) => (
+                <li><strong>{book.title}</strong> — {book.author}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        {bioData.bookshelf.recent?.length > 0 && (
+          <>
+            <h3>Recently finished</h3>
+            <ul>
+              {bioData.bookshelf.recent.map((book) => (
+                <li><strong>{book.title}</strong> — {book.author}</li>
+              ))}
+            </ul>
+          </>
+        )}
+      </section>
+    )}
   </div>
 </BaseLayout>
