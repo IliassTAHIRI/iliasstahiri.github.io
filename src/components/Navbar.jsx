@@ -1,5 +1,5 @@
 // src/components/Navbar.jsx
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const primaryLinks = [
   { href: '/blog', label: 'Blog' },
@@ -20,6 +20,18 @@ const moreLinks = [
 const Navbar = () => {
   const [moreOpen, setMoreOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    if (!moreOpen) return
+    const handler = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setMoreOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [moreOpen])
 
   return (
     <nav className="nav">
@@ -31,11 +43,12 @@ const Navbar = () => {
           {primaryLinks.map((link) => (
             <a key={link.href} href={link.href} className="nav-link">{link.label}</a>
           ))}
-          <div className="nav-dropdown">
+          <div className="nav-dropdown" ref={dropdownRef}>
             <button
               className="nav-link nav-more-btn"
               onClick={() => setMoreOpen((o) => !o)}
               aria-expanded={moreOpen}
+              aria-haspopup="menu"
             >
               More ▾
             </button>
