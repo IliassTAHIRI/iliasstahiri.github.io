@@ -76,7 +76,7 @@ const jsonLd = structuredData ? structuredData : defaultStructuredData
   </head>
   <body>
     <div class="app-container">
-      <Navbar />
+      <Navbar client:load />
       <main id="content">
         <slot />
       </main>
