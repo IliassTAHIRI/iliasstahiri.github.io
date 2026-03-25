@@ -1,0 +1,102 @@
+---
+// No server-side logic needed — pure HTML + client script
+---
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">Iliass Tahiri</a>
+
+    <div class="nav-links">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/publications" class="nav-link">Publications</a>
+      <a href="/case-studies" class="nav-link">Case Studies</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/now" class="nav-link">Now</a>
+
+      <div class="nav-dropdown" id="nav-dropdown">
+        <button
+          class="nav-link nav-more-btn"
+          id="nav-more-btn"
+          aria-expanded="false"
+          aria-haspopup="menu"
+        >
+          More ▾
+        </button>
+        <div class="nav-dropdown-menu" id="nav-dropdown-menu" style="display:none">
+          <a href="/til" class="nav-dropdown-item">TIL</a>
+          <a href="/research" class="nav-dropdown-item">Research</a>
+          <a href="/tutorials" class="nav-dropdown-item">Tutorials</a>
+          <a href="/non-tech" class="nav-dropdown-item">Non-Tech</a>
+          <a href="/perspectives" class="nav-dropdown-item">Perspectives</a>
+        </div>
+      </div>
+
+      <button class="nav-theme-btn" id="nav-theme-btn" aria-label="Toggle dark mode">
+        <span class="theme-icon-sun">☀</span>
+        <span class="theme-icon-moon">☾</span>
+      </button>
+    </div>
+
+    <button
+      class="nav-hamburger"
+      id="nav-hamburger"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+  </div>
+
+  <div class="nav-mobile-menu" id="nav-mobile-menu" style="display:none">
+    <a href="/blog" class="nav-mobile-link">Blog</a>
+    <a href="/publications" class="nav-mobile-link">Publications</a>
+    <a href="/case-studies" class="nav-mobile-link">Case Studies</a>
+    <a href="/about" class="nav-mobile-link">About</a>
+    <a href="/now" class="nav-mobile-link">Now</a>
+    <a href="/til" class="nav-mobile-link">TIL</a>
+    <a href="/research" class="nav-mobile-link">Research</a>
+    <a href="/tutorials" class="nav-mobile-link">Tutorials</a>
+    <a href="/non-tech" class="nav-mobile-link">Non-Tech</a>
+    <a href="/perspectives" class="nav-mobile-link">Perspectives</a>
+  </div>
+</nav>
+
+<script>
+  const moreBtn = document.getElementById('nav-more-btn') as HTMLButtonElement | null
+  const dropdownMenu = document.getElementById('nav-dropdown-menu') as HTMLElement | null
+  const dropdown = document.getElementById('nav-dropdown') as HTMLElement | null
+  const hamburger = document.getElementById('nav-hamburger') as HTMLButtonElement | null
+  const mobileMenu = document.getElementById('nav-mobile-menu') as HTMLElement | null
+  const themeBtn = document.getElementById('nav-theme-btn') as HTMLButtonElement | null
+
+  // More dropdown toggle
+  moreBtn?.addEventListener('click', () => {
+    const isOpen = dropdownMenu?.style.display !== 'none'
+    if (dropdownMenu) dropdownMenu.style.display = isOpen ? 'none' : 'block'
+    moreBtn.setAttribute('aria-expanded', String(!isOpen))
+  })
+
+  // Close dropdown on outside click
+  document.addEventListener('mousedown', (e) => {
+    if (dropdown && !dropdown.contains(e.target as Node)) {
+      if (dropdownMenu) dropdownMenu.style.display = 'none'
+      moreBtn?.setAttribute('aria-expanded', 'false')
+    }
+  })
+
+  // Hamburger / mobile menu toggle
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.style.display !== 'none'
+    if (mobileMenu) mobileMenu.style.display = isOpen ? 'none' : 'flex'
+    hamburger.setAttribute('aria-expanded', String(!isOpen))
+    hamburger.textContent = isOpen ? '☰' : '✕'
+  })
+
+  // Dark mode toggle
+  themeBtn?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme')
+    const next = current === 'dark' ? 'light' : 'dark'
+    document.documentElement.setAttribute('data-theme', next)
+    localStorage.setItem('theme', next)
+  })
+</script>

@@ -1,5 +1,5 @@
 ---
-import Navbar from '../components/Navbar.jsx'
+import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.jsx'
 import '../styles/global.css'
 
@@ -76,7 +76,7 @@ const jsonLd = structuredData ? structuredData : defaultStructuredData
   </head>
   <body>
     <div class="app-container">
-      <Navbar client:load />
+      <Navbar />
       <main id="content">
         <slot />
       </main>
